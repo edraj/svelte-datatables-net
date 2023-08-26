@@ -1,5 +1,5 @@
 import { functionSearch } from './functionSearch';
-export const functionCreateDatatable = function ({ parData, parSearchableColumns = undefined, parSearchString = '', parRowsPerPage = 'all', parSortBy, parSortOrder = 'ascending', parSortFunction }) {
+export const functionCreateDatatable = function ({ parData, parSearchableColumns = undefined, parSearchString = '', parRowsPerPage = 'all', parSortBy, parSortOrder = 'ascending', parActivePage = 1, parSortFunction }) {
     if (parSortFunction === undefined) {
         const sortModifier = parSortOrder === 'ascending' ? 1 : -1;
         const functionDefaultSortFunction = function (elementA, elementB) {
@@ -27,7 +27,7 @@ export const functionCreateDatatable = function ({ parData, parSearchableColumns
         stringSortBy: parSortBy,
         stringRowsPerPage: parRowsPerPage,
         numberRowsPerPage: numberRowsPerPage,
-        numberActivePage: 1,
+        numberActivePage: parActivePage,
         numberFirstRow: 0,
         numberLastRow: numberRowsPerPage,
         stringSearchString: parSearchString,

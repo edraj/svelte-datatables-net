@@ -8,6 +8,7 @@ type typeParameters<Generic> = {
 	parRowsPerPage?: `${number}` | 'all';
 	parSortBy?: keyof Generic;
 	parSortOrder?: 'ascending' | 'descending';
+	parActivePage?: number;
 	parSortFunction?: (a: Generic, b: Generic) => number;
 };
 
@@ -18,6 +19,7 @@ export const functionCreateDatatable = function <Generic>({
 	parRowsPerPage = 'all',
 	parSortBy,
 	parSortOrder = 'ascending',
+	parActivePage = 1,
 	parSortFunction
 }: typeParameters<Generic>): typeDatatable<Generic> {
 	if (parSortFunction === undefined) {
@@ -50,7 +52,7 @@ export const functionCreateDatatable = function <Generic>({
 		stringSortBy: parSortBy,
 		stringRowsPerPage: parRowsPerPage,
 		numberRowsPerPage: numberRowsPerPage,
-		numberActivePage: 1,
+		numberActivePage: parActivePage,
 		numberFirstRow: 0,
 		numberLastRow: numberRowsPerPage,
 		stringSearchString: parSearchString,
