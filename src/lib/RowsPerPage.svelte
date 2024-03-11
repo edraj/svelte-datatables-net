@@ -22,6 +22,7 @@
 	on:change={functionChange}
 	style={$$props.style}
 	class={$$props.class}
+	aria-label="Rows per page"
 	aria-labelledby="rows-per-page-label"
 >
 	<slot />
