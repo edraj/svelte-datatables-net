@@ -10,6 +10,7 @@ const functionChange = function() {
 	on:change={functionChange}
 	style={$$props.style}
 	class={$$props.class}
+	aria-labelledby="rows-per-page-label"
 >
 	<slot />
 </select>
