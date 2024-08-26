@@ -4,7 +4,7 @@ declare class __sveltets_Render<typeData> {
     props(): {
         propColumn: keyof typeData;
         propDatatable: typeDatatable<typeData>;
-        propIconSize?: number | undefined;
+        propIconSize?: number;
         propSortFunction?: ((a: typeData, b: typeData) => number) | undefined;
     };
     events(): {} & {
